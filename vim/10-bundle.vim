@@ -79,6 +79,9 @@ NeoBundle 'mileszs/ack.vim'
 " vim tmux navigator
 NeoBundle 'christoomey/vim-tmux-navigator'
 
+" vim php syntax 
+NeoBundle 'StanAngeloff/php.vim'
+
 call neobundle#end()
 
 if has('vim_starting') && s:InitNeoBundle == 1
