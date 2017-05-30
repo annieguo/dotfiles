@@ -6,7 +6,7 @@ export ZSH=$HOME/tools/dotfiles/oh-my-zsh
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
 #ZSH_THEME="Soliah"
-ZSH_THEME="agnoster"
+ZSH_THEME="amuse"
 
 # enable dircolors
 # eval `dircolors ${HOME}/.dircolors`
@@ -16,7 +16,7 @@ export LSCOLORS=gxfxbEaEBxxEhEhBaDaCaD
 
 # mercurial completion
 source /usr/local/share/zsh/site-functions
-
+source ~/tools/zsh-autosuggestions/zsh-autosuggestions.zsh
 # FIX ME: need a separated alias file
 alias vi='vim'
 
@@ -27,7 +27,7 @@ alias grep='grep --color=always'
 # CASE_SENSITIVE="true"
 
 # Uncomment the following line to disable bi-weekly auto-update checks.
-DISABLE_AUTO_UPDATE="true"
+#DISABLE_AUTO_UPDATE="true"
 
 # Uncomment the following line to change how often to auto-update (in days).
 # export UPDATE_ZSH_DAYS=13
@@ -73,7 +73,7 @@ setopt extended_glob
 
 
 export GOPATH=${HOME}/gocode
-PATH=/opt/android-studio/bin:/usr/local/go/bin:${HOME}/venv/main/bin/:${HOME}/tools/scripts/:/usr/local/bin:${PATH}:/usr/sbin:/sbin/
+PATH=/opt/android-studio/bin:/usr/local/go/bin:${HOME}/venv/main/bin:${HOME}/tools/scripts:/usr/local/bin:${PATH}:/usr/sbin:/sbin
 
 
 # You may need to manually set your language environment
