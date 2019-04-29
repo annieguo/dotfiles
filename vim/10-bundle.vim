@@ -80,9 +80,6 @@ NeoBundle 'mileszs/ack.vim'
 " vim tmux navigator
 NeoBundle 'christoomey/vim-tmux-navigator'
 
-" vim terraform integration
-NeoBundle 'hashivim/vim-terraform'
-
 " vim yaml plugin
 NeoBundle 'avakhov/vim-yaml'
 
@@ -94,6 +91,9 @@ NeoBundle 'vim-scripts/AutoClose'
 
 " Add CtrlP
 NeoBundle "kien/ctrlp.vim"
+
+" vim php syntax 
+NeoBundle 'StanAngeloff/php.vim'
 
 call neobundle#end()
 

@@ -27,7 +27,7 @@ export LSCOLORS=gxfxbEaEBxxEhEhBaDaCaD
 
 # mercurial completion
 source /usr/local/share/zsh/site-functions
-
+source ~/tools/zsh-autosuggestions/zsh-autosuggestions.zsh
 # FIX ME: need a separated alias file
 alias vi='vim'
 
@@ -38,7 +38,7 @@ alias grep='grep --color=always'
 # CASE_SENSITIVE="true"
 
 # Uncomment the following line to disable bi-weekly auto-update checks.
-DISABLE_AUTO_UPDATE="true"
+#DISABLE_AUTO_UPDATE="true"
 
 # Uncomment the following line to change how often to auto-update (in days).
 # export UPDATE_ZSH_DAYS=13
@@ -82,7 +82,9 @@ source $ZSH/oh-my-zsh.sh
 # enable extended glob for zsh, so you can use something like mv ^bak bak
 setopt extended_glob
 
-PATH=${HOME}/venv/main/bin:/usr/local/opt/coreutils/libexec/gnubin:/usr/local/go/bin:${HOME}/tools/scripts:/usr/local/bin:${PATH}:/usr/sbin:/sbin
+export GOPATH=${HOME}/gocode
+PATH=/opt/android-studio/bin:/usr/local/go/bin:${HOME}/venv/main/bin:${HOME}/tools/scripts:/usr/local/bin:${PATH}:/usr/sbin:/sbin
+
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
