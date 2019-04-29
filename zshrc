@@ -7,7 +7,7 @@ export GOPATH=${HOME}/gocode
 # leave the first one empty instead of using '.'
 # as using '.' will cause `cd` to print subdirectory name when changing to a subdirectory
 # inside current directory (`.`)
-export CDPATH=":${HOME}:${HOME}/repos:$(go env GOPATH)/src"
+export CDPATH=":${HOME}:${HOME}/repos"
 
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/tools/dotfiles/oh-my-zsh
@@ -82,7 +82,7 @@ source $ZSH/oh-my-zsh.sh
 # enable extended glob for zsh, so you can use something like mv ^bak bak
 setopt extended_glob
 
-PATH=${HOME}/venv/main/bin:$(go env GOPATH)/bin:/home/patrick/javascript/node/bin:/usr/local/opt/coreutils/libexec/gnubin:/usr/local/go/bin:${HOME}/tools/scripts:/usr/local/bin:${PATH}:/usr/sbin:/sbin
+PATH=${HOME}/venv/main/bin:/usr/local/opt/coreutils/libexec/gnubin:/usr/local/go/bin:${HOME}/tools/scripts:/usr/local/bin:${PATH}:/usr/sbin:/sbin
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
@@ -115,37 +115,9 @@ export EDITOR='vim'
 # enable comment in interactive mode
 setopt interactivecomments
 
-# creat symlink for valid ssh_auth_sock as required
-CURRENT_SSH_AUTH_SOCK=`readlink ${HOME}/.ssh/ssh_auth_sock`
-if [[ "$SSH_AUTH_SOCK" != "${HOME}/.ssh/ssh_auth_sock" && "$SSH_AUTH_SOCK" != "$CURRENT_SSH_AUTH_SOCK" ]]
-then
-        ln -sf $SSH_AUTH_SOCK ${HOME}/.ssh/ssh_auth_sock
-fi
-
-source ${HOME}/tools/dotfiles/credentials.sh
-
 # add pyenv configuration
 if which pyenv > /dev/null; then
     eval "$(pyenv init -)";
 fi
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
-# Load virtualenvwrapper functions
-venvwrap="$(/usr/bin/which virtualenvwrapper.sh)"
-if [[ -f ${venvwrap} ]]; then
-   source $venvwrap
-fi
-
-# include kubectl auto-completion
-if type "kubectl" > /dev/null
-then
-    source <(kubectl completion zsh)
-fi
-
-source ${HOME}/tools/dotfiles/oh-my-zsh/plugins/z/z.sh
-
-export VAULT_ADDR="https://vault.growth.internal.atlassian.com:8200"
-
-if [[ -f ${HOME}/.config/cloudtoken/bashrc_additions ]]; then
-    source ${HOME}/.config/cloudtoken/bashrc_additions
-fi
